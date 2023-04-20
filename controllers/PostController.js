@@ -3,7 +3,7 @@ const Post = require("../models/Post");
 
 const PostController ={
 
-    //ENDPOINT: CREAR UN POST
+    //ENDPOINT: CREATE POST
     async create(req,res){
         try {
             const post = await Post.create(req.body)
@@ -12,9 +12,18 @@ const PostController ={
             console.error(error)
             res.status(500).send({ message: 'Ha habido un problema al crear el post' })
         }
-    //ENDPOINT:
-    
-    },
 
+    },
+    //ENDPOINT: UPDATE POST
+    
+    async update(req, res) {
+        try {
+            const post = await Post.findByIdAndUpdate(req.params._id, req.body,
+                { new: true })
+                res.send({ message: "post successfully updated", post });
+            } catch (error) {
+                console.error(error);
+            }
+    },
 }
 module.exports = PostController;
