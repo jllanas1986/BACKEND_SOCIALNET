@@ -4,6 +4,16 @@ const UserSchema = new mongoose.Schema({
     email: String,
     password: String,
     age: Number,
+    // Relacionamos User con Comment
+    commentId: [{
+        type: ObjectId,
+        ref: 'Comment'
+    }],
+    // Relacionamos User con Post
+    postId: [{
+        type: ObjectId,
+        ref: 'Post'
+    }],
 }, { timestamps: true });
 
 const User = mongoose.model('User', UserSchema);
