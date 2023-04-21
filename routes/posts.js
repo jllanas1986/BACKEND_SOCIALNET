@@ -5,6 +5,7 @@ const PostController = require('../controllers/PostController');
 
 router.post('/create',PostController.create) //ROUTE: Endpoint CREATE post
 router.put('/update/:_id', PostController.update) // ROUTE: Endpoint UPDATE post
+router.delete('/delete/:_id', PostController.delete) // ROUTE: Endpoint UPDATE post
 
 
 
