@@ -7,7 +7,6 @@ const PostSchema = new mongoose.Schema({
     title: String,
     body: String,
     username: String,
-    like: Boolean,
     // Relacionamos USER--> Post
     userId: {
         type: ObjectId,
@@ -17,7 +16,8 @@ const PostSchema = new mongoose.Schema({
     commentId: [{
         type: ObjectId,
         ref: 'Comment'
-    }]
+    }],
+    likes: [],
 
 }, { timestamps: true });
 const Post = mongoose.model('Post', PostSchema);
