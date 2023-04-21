@@ -1,10 +1,10 @@
 // FALTA TESTEAR 
 const Post = require("../models/Post");
 
-const PostController ={
+const PostController = {
 
     //ENDPOINT: CREATE POST
-    async create(req,res){
+    async create(req, res) {
         try {
             const post = await Post.create(req.body)
             res.status(201).send(post)
@@ -14,16 +14,29 @@ const PostController ={
         }
 
     },
+
     //ENDPOINT: UPDATE POST
-    
     async update(req, res) {
         try {
             const post = await Post.findByIdAndUpdate(req.params._id, req.body,
                 { new: true })
-                res.send({ message: "post successfully updated", post });
-            } catch (error) {
-                console.error(error);
-            }
+            res.send({ message: "post successfully updated", post });
+        } catch (error) {
+            console.error(error);
+        }
     },
+
+    //ENDPOINT: DELETE POST
+
+    async delete(req, res) {
+        try {
+            const post = await Post.findByIdAndDelete(req.params._id)
+            res.send({ post, message: 'Post deleted' })
+        } catch (error) {
+            console.error(error)
+            res.status(500).send({ message: 'there was a problem trying to remove the publication'})
+        }
+    },
+
 }
 module.exports = PostController;
