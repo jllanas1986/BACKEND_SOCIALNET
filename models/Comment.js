@@ -4,8 +4,8 @@ const ObjectId = mongoose.SchemaTypes.ObjectId;
 
 const CommentSchema = new mongoose.Schema({
 
-post: String, // Sería post_id ?
-content: String, //Para no usar "body" como en "Post"
+commentTitle: String, // Sería post_id ?
+commentBody: String, //Para no usar "body" como en "Post"
 // Relacionamos USER--> Comments
 userId: {
     type: ObjectId,

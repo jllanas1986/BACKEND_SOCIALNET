@@ -1,40 +1,44 @@
 const User = require("../models/User");
-const bcrypt = require ('bcryptjs');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { jwt_secret } = require('../config/keys.js')
 
 const UserController = {
+
+  //ENDPOINT: CREAR usuario
   async register(req, res) {
     req.body.role = "user";
     const password = req.body.password;
     let hashedPassword;
-    if(password) {
+    if (password) {
       hashedPassword = bcrypt.hashSync(password, 10) ///encriptando clave de acceso
     };
     try {
-      const user = await User.create({...req.body, password: hashedPassword});
+      const user = await User.create({ ...req.body, password: hashedPassword });
       res.status(201).send({ message: "Usuario registrado con exito", user });
     } catch (error) {
       console.error(error);
     }
   },
 
+  //ENDPOINT: LOGUEAR usuario
   async login(req, res) {
     try {
-        const user = await User.findOne({
-            email: req.body.email,
-        })
+      const user = await User.findOne({
+        email: req.body.email,
+      })
       const token = jwt.sign({ _id: user._id }, jwt_secret);
-        if (user.tokens.length > 4) user.tokens.shift();
-        user.tokens.push(token);
-        await user.save();
-        res.send({ message: 'Bienvenid@ ' + user.name, token });
+      if (user.tokens.length > 4) user.tokens.shift();
+      user.tokens.push(token);
+      await user.save();
+      res.send({ message: 'Bienvenid@ ' + user.name, token });
     } catch (error) {
-        console.error(error);
-        res.status(500).send(error)
+      console.error(error);
+      res.status(500).send(error)
     }
   },
 
+  //ENDPOINT: LOGOUT
   async logout(req, res) {
     try {
       await User.findByIdAndUpdate(req.user._id, {
@@ -49,6 +53,19 @@ const UserController = {
     }
   },
 
-};
+  //ENDPOINT: BORRAR usuarios (solo como administrador)
+  async delete(req, res) {
+    try {
+      const user = await User.findByIdAndDelete(req.params._id)
+      res.send({ user, message: 'User deleted' })
+    } catch (error) {
+      console.error(error)
+      res.status(500).send({
+        message: 'there was a problem trying to remove the user'
+      })
+    }
+  }
+}
+
 
 module.exports = UserController;

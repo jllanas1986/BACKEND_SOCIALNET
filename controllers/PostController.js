@@ -1,5 +1,5 @@
-// FALTA TESTEAR 
 const Post = require("../models/Post");
+const Comment = require("../models/Comment"); // Declarado porque en CommentController pedia declarar "Post"
 
 const PostController = {
 
@@ -20,7 +20,7 @@ const PostController = {
         try {
             const post = await Post.findByIdAndUpdate(req.params._id, req.body,
                 { new: true })
-            res.send({ message: "post successfully updated", post });
+            res.send({ message: " This post has been successfully updated:", post });
         } catch (error) {
             console.error(error);
         }
@@ -31,7 +31,7 @@ const PostController = {
     async delete(req, res) {
         try {
             const post = await Post.findByIdAndDelete(req.params._id)
-            res.send({ post, message: 'Post deleted' })
+            res.send({ message: 'The following post has been deleted:',post })
         } catch (error) {
             console.error(error)
             res.status(500).send({ message: 'there was a problem trying to remove the publication'})
