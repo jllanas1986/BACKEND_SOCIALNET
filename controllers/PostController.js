@@ -7,7 +7,7 @@ const PostController = {
     async create(req, res) {
         try {
             const post = await Post.create(req.body)
-            res.status(201).send({ message: 'Post creado correctamente', post})
+            res.status(201).send({ message: 'Post creado correctamente', post })
         } catch (error) {
             console.error(error)
             res.status(500).send({ message: 'Ha habido un problema al crear el post' })
@@ -31,12 +31,37 @@ const PostController = {
     async delete(req, res) {
         try {
             const post = await Post.findByIdAndDelete(req.params._id)
-            res.send({ message: 'The following post has been deleted:',post })
+            res.send({ message: 'The following post has been deleted:', post })
         } catch (error) {
             console.error(error)
-            res.status(500).send({ message: 'there was a problem trying to remove the publication'})
+            res.status(500).send({ message: 'there was a problem trying to remove the publication' })
         }
     },
 
+    //ENDPOINT:  GET post by NAME (title)
+
+    async getPostByTitle(req, res) {
+        try {
+            const posts = await Post.find({
+                $text: {
+                    $search: req.params.name,
+                },
+            });
+            res.send(posts);
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    //ENDPOINT:  GET post by ID
+
+    async getById(req, res) {
+        try {
+            const post = await Post.findById(req.params._id)
+            res.send(post)
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 module.exports = PostController;
