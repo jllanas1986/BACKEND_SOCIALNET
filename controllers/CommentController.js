@@ -8,6 +8,11 @@ const CommentController = {
     async create(req, res) {
         try {
             const comment = await Comment.create(req.body)
+            const post = await Post.findByIdAndUpdate(
+                req.params._id,
+                { $push: { commentIds: req.comment._id } },
+                // { $push: { commentIds: req.comment.ObjectId } },
+                { new: true });
             res.status(201).send({ message: 'Ha publicado el siguiente comentario:', comment})
         } catch (error) {
             console.error(error)

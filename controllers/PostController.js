@@ -65,6 +65,41 @@ const PostController = {
         } catch (error) {
             console.error(error);
         }
-    }
+    },
+
+    //ENDPOINT:  GET ALL posts + USERS who crated the posts + COMMENTS atached to posts
+
+    async getAllPosts(req, res) {
+        try {
+            const posts = await Post.find().populate("userId").populate("commentIds") // Vacío para que recoja todo, no solo lo que le paso
+            res.send(posts);
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    //ENDPOINT:  GET ALL posts PAGINATED
+
+    async getAllPage(req, res) {
+        try {
+            const { page = 1, limit = 10 } = req.query;
+            const posts = await Post.find()
+                .limit(limit)
+                .skip((page - 1) * limit);
+            res.send(posts);
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    // async getAllPosts(req, res) {
+    //     try {
+    //         const posts = await Post.find()
+    //         res.send(posts);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // },
+
 }
 module.exports = PostController;
