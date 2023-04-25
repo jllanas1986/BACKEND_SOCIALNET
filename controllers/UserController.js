@@ -91,6 +91,30 @@ const UserController = {
       console.error(error);
     }
   },
+
+  //ENDPOINT: MOSTRAR usuario por indice(NO FUNCIONA)
+  async getUsersByName(req, res) {
+    try {
+
+      if (req.params.name.length > 20) {
+        return res.status(400).send("Búsqueda demasiado larga");
+      }
+
+      const name = new RegExp(req.params.name, "i");
+
+      const users = await User.find(
+        { 
+          $text: {
+
+        $search: req.params.name,
+        
+        }, });
+
+      res.send(users);
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 module.exports = UserController;
