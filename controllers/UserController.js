@@ -3,8 +3,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { jwt_secret } = require("../config/keys.js");
 
-
-
 const UserController = {
   //ENDPOINT: CREAR usuario
   async register(req, res, next) {
@@ -18,8 +16,8 @@ const UserController = {
       const user = await User.create({ ...req.body, password: hashedPassword });
       res.status(201).send({ message: "Usuario registrado con exito", user });
     } catch (error) {
-      console.error(error)
-      next(error)
+      console.error(error);
+      next(error);
     }
   },
 
@@ -68,16 +66,26 @@ const UserController = {
     }
   },
 
-  //ENDPOINT: MOSTRAR información usuario con sus Post
+  //ENDPOINT: MOSTRAR información usuario con sus Posts y Comments
   async getInfo(req, res) {
     try {
-      const user = await User.findById(req.user._id)
-      .populate({
+      const user = await User.findById(req.user._id).populate({
         path: "postIds",
         populate: {
           path: "commentIds",
         },
       });
+      res.send(user);
+    } catch (error) {
+      console.error(error);
+    }
+  },
+
+  //ENDPOINT: MOSTRAR usuario por id
+  async getById(req, res) {
+    try {
+      const user = await User.findById(req.params._id);
+
       res.send(user);
     } catch (error) {
       console.error(error);
