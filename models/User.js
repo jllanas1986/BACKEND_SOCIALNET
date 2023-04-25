@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Por favor rellena tu edad"],
     },
-    role: { type: String, default: "user"},
+    role: { type: String, default: "user" },
     tokens: [],
     postIds: [{ type: ObjectId, ref: "Post" }],
     commentIds: [{ type: ObjectId, ref: "Comment" }],
@@ -35,6 +35,10 @@ UserSchema.methods.toJSON = function () {
   delete user.password;
   return user;
 };
+
+UserSchema.index({
+  name: "text",
+});
 
 const User = mongoose.model("User", UserSchema);
 
