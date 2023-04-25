@@ -15,7 +15,7 @@ const PostSchema = new mongoose.Schema({
     // Relacionamos USER--> Post
     userId: {
         type: ObjectId,
-        required: [true, "Por favor indica quien es el autor del post."],
+        // required: [true, "Por favor indica quien es el autor del post."], --> No se necesita porque lo pone el controlador
         ref: 'User'
     },
     // Relacionamos COMMENT--> Post
