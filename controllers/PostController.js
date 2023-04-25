@@ -117,5 +117,20 @@ const PostController = {
             res.status(500).send({ message: "There was a problem with your like" });
         }
     },
+
+    //ENDPOINT: DISLIKE
+
+    async dislike(req, res) {
+        try {
+            const post = await Post.findByIdAndUpdate(
+                req.params._id,
+                {$pull: {likes: []}  }
+                );
+            res.send({ message: "Post has been UNLIKED" });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send({ message: "There was a problem with your UNLIKE" });
+        }
+    },
 }
 module.exports = PostController;

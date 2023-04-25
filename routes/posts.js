@@ -11,6 +11,7 @@ router.get('/postsById/:_id', authentication, PostController.getById) // ROUTE: 
 router.get('/getAllPosts', authentication, PostController.getAllPosts) // ROUTE: Endpoint GET ALL post + User Info + Comments attached
 router.get('/getPostsPaginated', authentication, PostController.getAllPage) // ROUTE: Endpoint GET ALL post + User Info + Comments attached
 router.put('/likes/:_id', authentication, PostController.like); // To LIKE a POST based on its ID
+router.put('/dislike/:_id', authentication, PostController.dislike); // To UNLIKE a POST based on its ID
 
 
 module.exports = router;
