@@ -13,7 +13,7 @@ const PostSchema = new mongoose.Schema({
         ref: 'User'
     },
     // Relacionamos COMMENT--> Post
-    commentId: [{
+    commentIds: [{
         type: ObjectId,
         ref: 'Comment'
     }],

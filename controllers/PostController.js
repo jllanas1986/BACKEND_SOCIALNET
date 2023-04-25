@@ -1,5 +1,6 @@
 const Post = require("../models/Post");
 const Comment = require("../models/Comment"); // Declarado porque en CommentController pedia declarar "Post"
+const User = require('../models/User.js'); // Importamos model user
 
 const PostController = {
 
@@ -7,6 +8,7 @@ const PostController = {
     async create(req, res) {
         try {
             const post = await Post.create(req.body)
+            await User.findByIdAndUpdate(req.user._id, { $push: { postIds: post._id } })// Para mostrar el id del user que hace el post
             res.status(201).send({ message: 'Post creado correctamente', post })
         } catch (error) {
             console.error(error)
