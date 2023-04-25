@@ -42,9 +42,10 @@ const PostController = {
 
     async getPostByTitle(req, res) {
         try {
+            console.log(req.params.title)
             const posts = await Post.find({
                 $text: {
-                    $search: req.params.name,
+                    $search: req.params.title,
                 },
             });
             res.send(posts);

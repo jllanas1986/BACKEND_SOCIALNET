@@ -21,10 +21,7 @@ const PostSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-    //Creamos un ÍNDICE para buscar por título de POST
-    PostSchema.index({
-        name: "text",
-        });
+PostSchema.index({ title: 'text' });
 
 const Post = mongoose.model('Post', PostSchema);
 module.exports = Post;
