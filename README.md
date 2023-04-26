@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![](./assets/Banner.jpg)
 
 
@@ -160,6 +159,3 @@ Powered by BLADGPT
 **Joan Baldó** - *Readme builder* | *Coding* | - [joanbaldo](https://github.com/joanbaldo)
 
 ***
-=======
-## Esto es un comentario del crack-2
->>>>>>> c527eab8b9f300007ea44ab60262a5ff6a1d603b
