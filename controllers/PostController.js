@@ -124,7 +124,7 @@ const PostController = {
         try {
             const post = await Post.findByIdAndUpdate(
                 req.params._id,
-                {$pull: {likes: []}  }
+                {$pull: {likes: req.user._id}  }
                 );
             res.send({ message: "Post has been UNLIKED" });
         } catch (error) {
