@@ -2,13 +2,14 @@ const User = require('../models/User');
 const Post = require('../models/Post'); // Hay que declararlo o el middleware de Post NO funcionará
 const Comment = require('../models/Comment'); // Hay que declararlo o el middleware de Comment NO funcionará
 const jwt = require('jsonwebtoken');
-const { jwt_secret } = require('../config/keys.js')
+//const { jwt_secret } = require('../config/keys.js') // Ya no se necesita porque no lo cogemos de keys
+require("dotenv").config();
 
 //MIDDLEWARE (función) verificar TOKEN
 const authentication = async(req, res, next) => {
     try {
         const token = req.headers.authorization;
-        const payload = jwt.verify(token, jwt_secret);
+        const payload = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({ _id: payload._id, tokens: token });
         if (!user) {
             return res.status(401).send({ message: 'No estas autorizado' });
