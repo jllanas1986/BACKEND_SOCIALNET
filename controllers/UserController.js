@@ -27,14 +27,21 @@ const UserController = {
       const user = await User.findOne({
         email: req.body.email,
       });
+      if (!user) {
+        return res.status(400).send({ msg: "Correo o contraseña incorrectos" });
+      }
+      const isMatch = await bcrypt.compare(req.body.password, user.password);
+      if (!isMatch) {
+        return res.status(400).send({ msg: "Correo o contraseña incorrectos" });
+      }
       const token = jwt.sign({ _id: user._id }, jwt_secret);
-      if (user.tokens.length > 4) user.tokens.shift();
+      if (user.tokens.length > 4) user.tokens.shift;
       user.tokens.push(token);
       await user.save();
-      res.send({ message: "Bienvenid@ " + user.name, token });
+      res.send({ msg: "Bienvenid@ " + user.name, token, user });
     } catch (error) {
       console.error(error);
-      res.status(500).send(error);
+      res.status(500).send({ msg: "Ha habido un error al logearte", error });
     }
   },
 
@@ -95,13 +102,6 @@ const UserController = {
   //ENDPOINT: MOSTRAR usuario por indice(NO FUNCIONA)
   async getUsersByName(req, res) {
     try {
-
-      /*if (req.params.name.length > 20) {
-        return res.status(400).send("Búsqueda demasiado larga");
-      }*/
-
-      //const name = new RegExp(req.params.name, "i");
-
       const users = await User.find(
         { 
           $text:{
