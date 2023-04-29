@@ -13,7 +13,7 @@ app.use(express.json());
 
 dbConnection();
 
-app.use('/api-docs', swaggerUI.serve,swaggerUI.setup(docs)) 
+
 
 
 // RUTAS IMPORTADAS
@@ -29,5 +29,6 @@ app.use(handleTypeError)
 //app.use('/api-docs', swaggerUI.serve,swaggerUI.setup(docs)) // La ruta hacia la DOCUMENTACIÓN DE LA API! OJO
 //El (docs) de arriba (linea 26) refiere al de la linea 8. Todo lo que contenga ese doscs lo mostraremos en el endpoint de la documentación ES DECIR...contendrá todo lo que el docs> index.js contenga.
 
+app.use('/api-docs', swaggerUI.serve,swaggerUI.setup(docs)) 
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
