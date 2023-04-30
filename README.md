@@ -2,32 +2,32 @@
 
 
 # ÍNDICE
-- [THESOCIALAPI](#trello-)
-    - [Descripción del proyecto](#vista-tablero)
+- [THESOCIALAPI](#thesocialapi-)
+    - [Descripción del proyecto](#descripción-del-proyecto)
 
 - [TRELLO](#trello-)
-    - [Enlace al tablero de trabajo ONLINE del proyecto](#vista-tablero)
-    - [Bloques de tareas y código visual](#vista-tablero)
-    - [Vista general de las tareas](#vista-lista)
+    - [Enlace al tablero de trabajo ONLINE del proyecto](#enlace-al-tablero-de-trabajo-online-del-proyecto)
+    - [Bloques de tareas y código visual](#bloques-de-tareas-y-código-visual)
+    - [Vista general de las tareas](#vista-general-de-las-tareas)
 
-- [POSTMAN](#trello-)
-    - [Enlace a la documentación y testing de la API online](#vista-tablero)
-    - [Estructura de endpoints creados y testeados](#vista-tablero)
+- [POSTMAN](#postman)
+    - [Enlace a la documentación y testing de la API online](#enlace-a-la-documentación-y-testing-de-la-api-online)
+    - [Estructura de endpoints creados y testeados](#estructura-de-endpoints-creados-y-testeados)
 
-- [SWAGGER](#mongodb-investigación)
-    - [Estructura de carpetas y check de instalación de la dependencia](#qué-es-mongodb)
+- [SWAGGER](#swagger)
+    - [Estructura de carpetas y check de instalación de la dependencia](#estructura-de-carpetas-y-check-de-dependencia)
  
-- [MONGODB Atlas](#trello-)
-    - [Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI](#vista-tablero)
+- [MONGODB Atlas](#mongodb-atlas)
+    - [Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI](#vista-del-clúster-que-contiene-la-base-de-datos-que-nutre-thesocialapi)
  
-- [ENDPOINTS de la API](#trello-)
-    - [ENDPOINTS de la Colección: Usuarios](#vista-tablero)
-    - [ENDPOINTS de la Colección: Publicaciones](#vista-tablero)
-    - [ENDPOINTS de la Colección: Comentarios](#vista-lista)
+- [ENDPOINTS de la API](#endpoints-de-la-api)
+    - [ENDPOINTS de la Colección: Usuarios](#endpoints-de-la-colección-usuarios)
+    - [ENDPOINTS de la Colección: Publicaciones](#endpoints-de-la-colección-publicaciones)
+    - [ENDPOINTS de la Colección: Comentarios](#endpoints-de-la-colección-comentarios)
 
-- [Herramientas empleadas en el proyecto (TOOLSET) ](#authors-)
+- [Herramientas empleadas en el proyecto (TOOLSET) ](#herramientas-empleadas-en-el-proyecto-toolset-%EF%B8%8F)
 
-- [Authores](#authors-)
+- [Autores](#autores-%EF%B8%8F)
 
 
 
