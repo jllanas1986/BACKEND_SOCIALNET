@@ -4,27 +4,34 @@
 # ÍNDICE
 
 - [TRELLO](#trello-)
+    - [Enlace al tablero de trabajo ONLINE del proyecto](#vista-tablero)
     - [Bloques de tareas y código visual](#vista-tablero)
     - [Vista general de tareas](#vista-lista)
 
 - [POSTMAN](#trello-)
-    - [Bloques de tareas y código visual](#vista-tablero)
+    - [Enlace a la documentación de postman ONLINE](#vista-tablero)
+    - [Estructura de endpoints creados y testeados](#vista-tablero)
     - [Vista general de tareas](#vista-lista)
 
 - [SWAGGER](#mongodb-investigación)
-    - [Check carpetas y dependencias](#qué-es-mongodb)
+    - [En](#qué-es-mongodb)
     - [¿Cuales son las características especiales de MONGODB?](#cuales-son-las-características-especiales-de-mongodb)
     - [¿Cómo se estructuran los datos en MongoDB?](#cómo-se-estructuran-los-datos-en-mongodb-)
     - [¿Ventajas de MONGODB respecto otras bases de datos relacionales?](#ventajas-de-mongodb-respecto-otras-bases-de-datos-relacionales)
     - [¿Desventajas de MongoDB? ¿Cuando no es recomendable utilizarlo?](#desventajas-de-mongodb-cuando-no-es-recomendable-utilizarlo)
     - [Instalación y configuración de MONGODB y requisitos mínimos de hardware y software.](#instalación-y-configuración-de-mongodb-y-requisitos-mínimos-de-hardware-y-software)
 
+- [POSTMAN](#trello-)
+    - [Enlace a la documentación de postman ONLINE](#vista-tablero)
+    - [Estructura de endpoints creados y testeados](#vista-tablero)
+    - [Vista general de tareas](#vista-lista)
+
 - [Authors](#authors-)
 
 
 
 # TRELLO 📅
-## Vista tablero
+## Bloques de tareas y código visual
 [⬆️](#index)
 ![](./assets/Trello_1.jpg)
 
