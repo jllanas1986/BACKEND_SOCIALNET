@@ -80,7 +80,7 @@
 
 ## Estructura de endpoints creados y testeados
 [⬆️](#índice)
-![](./assets/TSN_Postman_1)
+![](./assets/TSN_Postman_1.jpg)
 
 ***
 # SWAGGER
