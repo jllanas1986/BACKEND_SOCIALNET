@@ -79,18 +79,20 @@ Powered by BLADGPT
 ## Herramientas empleadas en el proyecto (TOOLSET) ⚙️
 [⬆️](#index)
 
-*VISUAL STUDIO CODE*
-
->* [*TRELLO*](https://code.visualstudio.com/) - Planificador de tareas (Version: 1.75.1)
->* [*POSTMAN*](https://code.visualstudio.com/) - Software para probar y documentar endpoints (Version: 1.75.1)
->* [*SWAGGER*](https://code.visualstudio.com/) - Plataforma de documentación de API's (Version: 1.75.1)
->* [*VISUAL STUDIO CODE*](https://code.visualstudio.com/) - Editor de código (Version: 1.75.1)
->* [*MONGODB*](https://code.visualstudio.com/) - Editor de código (Version: 1.75.1)
->* [*MONGOOSE*](https://code.visualstudio.com/) - Editor de código (Version: 1.75.1)
->* [*ATLAS (MONGODB)*](https://code.visualstudio.com/) - Alojamiento de MONGODB para la/s base/s de datos empleando clústers
->* [*BCRYPT*](https://code.visualstudio.com/) - Editor de código (Version: 1.75.1)
->* [*VERCEL*](https://code.visualstudio.com/) - Plataforma para el despliegue del servidor(Version: 1.75.1)
->* [*Live Server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) -Extension that updates the choosen browser to see changes in real time.
+>* [*TRELLO*](https://trello.com/) - Planificador de tareas (Versión: no disponible)
+>* [*POSTMAN*](https://www.postman.com/) - Software para probar y documentar endpoints (Versión: 10.13.5)
+>* [*SWAGGER*](https://swagger.io/) - Plataforma de documentación de API's (Versión: 4.6.2)
+>* [*VISUAL STUDIO CODE*](https://code.visualstudio.com/) - Editor de código (Versión: 1.75.1)
+>* [*NodeJS*](https://code.visualstudio.com/) - Entorno de ejecución para crear servidores en backend (Versión: 18.15.0)
+>* [*Nodemon*](https://www.npmjs.com/package/nodemon/) - Herramienta para desarrollo que levanta el servidor automáticamente tras cada cambio realizado en el código (Versión: 18.15.0)
+>* [*MONGODB*](https://www.mongodb.com//) - Gestor de base de datos (Versión: 6.0)
+>* [*MONGOOSE*](https://mongoosejs.com/) - Herramienta de modelado de objetos para Node Js (Versión: 7.0.4)
+>* [*ATLAS (MONGODB)*](https://cloud.mongodb.com/) - Alojamiento de MONGODB para la/s base/s de datos empleando clústers (Versión: 6.0)
+>* [*BCRYPT*](https://code.visualstudio.com/) - Dependencia para la encriptación y comprobación de contraseñas (Versión: 1.4.3)
+>* [*JASON WEB TOKEN*](https://code.visualstudio.com/) - Dependencia para generar tokens de acceso (Versión: 9.0.0)
+>* [*DOTENV*](https://code.visualstudio.com/) - Dependencia para establecer las variables globales y poder desplegar (Versión: 16.0.3)
+>* [*VERCEL*](https://code.visualstudio.com/) - Plataforma para el despliegue del servidor(Versión: 1.75.1)
+>* [*Live Server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) -Extension de Visual Studio para check durante la fase de desarrollo y en entorno local.
 
 
 ## Authors ✒️
