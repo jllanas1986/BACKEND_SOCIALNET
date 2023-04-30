@@ -53,6 +53,7 @@
 |MongoDB Atlas| Aquí está la base de datos pre-poblada con la que efectuaremos las pruebas de conexión de la API.  |
 |VERCEL          |Plataforma de despligue,donde se ejecuta el servidor que permite entregar información desde y hacia la base de datos. |
 
+***
 # TRELLO 📅
 ## Enlace al tablero de trabajo ONLINE del proyecto
 [⬆️](#índice)
@@ -81,13 +82,18 @@
 [⬆️](#índice)
 ![](./assets/TSN_Postman_1)
 
-
+***
 # SWAGGER
 ## Estructura de carpetas y check de dependencia
 [⬆️](#índice)
 ![](./assets/TSN_Swagger_1)
 >Vista de la estructura de carpetas necesaria al instalar la dependencia que vincula el código con la plataforma de SWAGGER.
 
+> __Note__
+No es posible proporcionar ningún vínculo de testing de SWAGGER porque el deployment sobre VERCEL no está terminado.
+> __Warning__
+Se requiere modificar la estructura del index.js (project root) de manera muy específica.
+***
 # MONGODB Atlas
 ## Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI
 [⬆️](#índice)
@@ -97,26 +103,29 @@
     - Publicaciones (POSTS)
     - Comentarios (COMMENTS)
 
+***
 # ENDPOINTS de la API
 ## ENDPOINTS de la Colección: Usuarios
 [⬆️](#índice)
 
->Aunque MongoDB ofrece muchas ventajas, también tiene algunas limitaciones y desventajas que es importante tener en cuenta al considerar su uso en un proyecto. Algunas de las desventajas de MongoDB son las siguientes:
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Crear usuario | POST  | /users/crear|
 
 
+```js
+const foundProduct = await Product.findByPk(req.params.id, {
+                include:  { 
+                    model: Category, 
+                    attributes:["name"], 
+                    through: { attributes: [] } //Excludes data from the junction table
+                 }
+            }) 
+```
 
 
-
-## Instalación y configuración de MONGODB y requisitos mínimos de hardware y software.
-[⬆️](#índice)
-
->La instalación y configuración de MongoDB puede variar según el sistema operativo en el que se desee instalar. A continuación se proporcionan los pasos generales para la instalación en un entorno típico de Windows, Linux o macOS:
-
-> __Note__
-Powered by BLADGPT
-
-
-## Herramientas empleadas en el proyecto (TOOLSET) ⚙️
+***
+# Herramientas empleadas en el proyecto (TOOLSET) ⚙️
 [⬆️](#índice)
 
 >* [*TRELLO*](https://trello.com/) - Planificador de tareas (Versión: no disponible)
@@ -134,8 +143,8 @@ Powered by BLADGPT
 >* [*VERCEL*](https://code.visualstudio.com/) - Plataforma para el despliegue del servidor(Versión: 1.75.1)
 >* [*Live Server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) -Extension de Visual Studio para check durante la fase de desarrollo y en entorno local.
 
-
-## Authores ✒️
+***
+# Autores ✒️
 [⬆️](#índice)
 
 **José LLanas** - | *Coding* | - [jllanas1986](https://github.com/jllanas1986)
