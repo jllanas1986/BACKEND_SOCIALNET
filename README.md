@@ -86,7 +86,7 @@
 # SWAGGER
 ## Estructura de carpetas y check de dependencia
 [⬆️](#índice)
-![](./assets/TSN_Swagger_1)
+![](./assets/TSN_Swagger_1.jpg)
 >Vista de la estructura de carpetas necesaria al instalar la dependencia que vincula el código con la plataforma de SWAGGER.
 
 > __Note__
@@ -97,7 +97,7 @@ Se requiere modificar la estructura del index.js (project root) de manera muy es
 # MONGODB Atlas
 ## Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI
 [⬆️](#índice)
-![](./assets/TSN_Atlas_1)
+![](./assets/TSN_Atlas_1.jpg)
 >Detalle del contenido del CLÚSTER que aloja la base de datos mostrando sus tres colecciones:
     - Usuarios (USERS)
     - Publicaciones (POSTS)
