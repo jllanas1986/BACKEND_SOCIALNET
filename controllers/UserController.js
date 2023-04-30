@@ -39,7 +39,7 @@ const UserController = {
       if (user.tokens.length > 4) user.tokens.shift;
       user.tokens.push(token);
       await user.save();
-      res.send({ msg: "Bienvenid@ " + user.name, token, user });
+      res.send({ msg: "Bienvenid@ " + user.name, token });
     } catch (error) {
       console.error(error);
       res.status(500).send({ msg: "Ha habido un error al logearte", error });
