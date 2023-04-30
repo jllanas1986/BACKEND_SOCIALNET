@@ -18,6 +18,7 @@
  - [Authors](#authors-)
 
 
+
 # TRELLO 📅
 ## Vista tablero
 [⬆️](#index)
@@ -150,6 +151,19 @@
 
 > __Note__
 Powered by BLADGPT
+
+
+## Built with (TOOLSET) ⚙️
+[⬆️](#index)
+
+*VISUAL STUDIO CODE*
+
+>* [*VISUAL STUDIO CODE*](https://code.visualstudio.com/) - Code editor used (Version: 1.75.1)
+>* [*BOOTSTRAP*](https://getbootstrap.com) - CSS Framework (Version: 5.3.0) 
+>* [*BOOTSWATCH*](https://bootswatch.com) - CSS Templates for Bootstrap
+>* [*Open trivia database*](https://opentdb.com/) - API for questions
+>* [*Live Server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) -Extension that updates the choosen browser to see changes in real time.
+>* [*Live Share*](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) -Extension that allow remote team coding under the same Visual Studio project  (Version: 1.0.5832). 
 
 ## Authors ✒️
 [⬆️](#index)
