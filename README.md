@@ -22,6 +22,11 @@
     - [Estructura de endpoints creados y testeados](#vista-tablero)
     - [Vista general de tareas](#vista-lista)
 
+- [ENDPOINTS de la API](#trello-)
+    - [ENDPOINTS de la Colección: Usuarios](#vista-tablero)
+    - [ENDPOINTS de la Colección: Publicaciones](#vista-tablero)
+    - [ENDPOINTS de la Colección: Comentarios](#vista-lista)
+
 - [Herramientas empleadas en el proyecto (TOOLSET) ](#authors-)
 
 - [Authores](#authors-)
@@ -32,7 +37,17 @@
 ## Descripción del proyecto
 [⬆️](#índice)
 
->*Vista general del tablero creado para el proyecto THESOCIALAPI.*
+>*THESOCIALAPI es una plataforma online de ayuda a la creación y testing de redes sociales  mediante el uso de una base de datos pre-poblada y una API que permite realizar las operaciones standar con Usuarios, Publicaciones, Comentarios y Likes. *
+>La plataforma lleva implementada características especiales como:
+
+>- [X] Encriptación, validación de contraseñas y middleware de errores
+>- [X] Tockens de inicio de sesión para autorizar ciertas operaciones CRUD
+>- [X] Comprobación de la autoria de una publicación
+>- [X] Comprobación de la autoria de un comentario
+>- [X] Comprobación de privilegios como administrador
+>- [X] Posibilidad de dar o quitar un LIKE a las publicaciones
+>- [X] Posibilidad de paginar los resultados
+
 
 # TRELLO 📅
 ## Bloques de tareas y código visual
