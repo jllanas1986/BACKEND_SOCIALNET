@@ -4,11 +4,11 @@
 # INDEX
 
 - [TRELLO](#trello-)
-    - [Vista tablero](#vista-tablero)
-    - [Vista lista](#vista-lista)
+    - [Bloques de tareas y código visual](#vista-tablero)
+    - [Vista general de tareas](#vista-lista)
 
- - [MONGODB Investigación](#mongodb-investigación)
-    - [¿Qué es MongoDB?](#qué-es-mongodb)
+ - [SWAGGER](#mongodb-investigación)
+    - [Check carpetas y dependencias](#qué-es-mongodb)
     - [¿Cuales son las características especiales de MONGODB?](#cuales-son-las-características-especiales-de-mongodb)
     - [¿Cómo se estructuran los datos en MongoDB?](#cómo-se-estructuran-los-datos-en-mongodb-)
     - [¿Ventajas de MONGODB respecto otras bases de datos relacionales?](#ventajas-de-mongodb-respecto-otras-bases-de-datos-relacionales)
