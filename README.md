@@ -120,7 +120,41 @@ const foundProduct = await Product.findByPk(req.params.id, {
                     attributes:["name"], 
                     through: { attributes: [] } //Excludes data from the junction table
                  }
-            }) 
+
+```
+## ENDPOINTS de la Colección: Publicaciones
+[⬆️](#índice)
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Crear usuario | POST  | /users/crear|
+
+
+```js
+const foundProduct = await Product.findByPk(req.params.id, {
+                include:  { 
+                    model: Category, 
+                    attributes:["name"], 
+                    through: { attributes: [] } //Excludes data from the junction table
+                 }
+
+```
+## ENDPOINTS de la Colección: Comentarios
+[⬆️](#índice)
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Crear usuario | POST  | /users/crear|
+
+
+```js
+const foundProduct = await Product.findByPk(req.params.id, {
+                include:  { 
+                    model: Category, 
+                    attributes:["name"], 
+                    through: { attributes: [] } //Excludes data from the junction table
+                 }
+
 ```
 
 
