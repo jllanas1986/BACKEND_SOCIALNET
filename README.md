@@ -19,9 +19,7 @@
  
 - [MONGODB Atlas](#trello-)
     - [Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI](#vista-tablero)
-    - [Estructura de endpoints creados y testeados](#vista-tablero)
-    - [Vista general de tareas](#vista-lista)
-
+ 
 - [ENDPOINTS de la API](#trello-)
     - [ENDPOINTS de la Colección: Usuarios](#vista-tablero)
     - [ENDPOINTS de la Colección: Publicaciones](#vista-tablero)
@@ -53,7 +51,7 @@
 | PLATAFORMA    | USO |
 | :-----------:   | :---------- |
 |MongoDB Atlas| Aquí está la base de datos pre-poblada con la que efectuaremos las pruebas de conexión de la API.  |
-|VERCEL          |Plataforma de despligue,donde se ejecuta el servidor que permite entregar información desde y hacia la base de datos |
+|VERCEL          |Plataforma de despligue,donde se ejecuta el servidor que permite entregar información desde y hacia la base de datos. |
 
 # TRELLO 📅
 ## Enlace al tablero de trabajo ONLINE del proyecto
@@ -90,13 +88,17 @@
 ![](./assets/TSN_Swagger_1)
 >Vista de la estructura de carpetas necesaria al instalar la dependencia que vincula el código con la plataforma de SWAGGER.
 
-#MONGODB Atlas
-## ¿Ventajas de MONGODB respecto otras bases de datos relacionales?
+# MONGODB Atlas
+## Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI
 [⬆️](#índice)
->MongoDB ofrece varias ventajas en comparación con las bases de datos relacionales, especialmente en escenarios donde se requiere flexibilidad en la estructura de los datos y alta escalabilidad. Algunas de las ventajas principales de MongoDB son las siguientes:
+![](./assets/TSN_Atlas_1)
+>Detalle del contenido del CLÚSTER que alija la base de datos mostrando sus tres colecciones:
+    - Usuarios (USERS)
+    - Publicaciones (POSTS)
+    - Comentarios (COMMENTS)
 
-
-## ¿Desventajas de MongoDB? ¿Cuando no es recomendable utilizarlo?
+# ENDPOINTS de la API
+## ENDPOINTS de la Colección: Usuarios
 [⬆️](#índice)
 
 >Aunque MongoDB ofrece muchas ventajas, también tiene algunas limitaciones y desventajas que es importante tener en cuenta al considerar su uso en un proyecto. Algunas de las desventajas de MongoDB son las siguientes:
