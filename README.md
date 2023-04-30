@@ -98,7 +98,7 @@ Se requiere modificar la estructura del index.js (project root) de manera muy es
 ## Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI
 [⬆️](#índice)
 ![](./assets/TSN_Atlas_1)
->Detalle del contenido del CLÚSTER que alija la base de datos mostrando sus tres colecciones:
+>Detalle del contenido del CLÚSTER que aloja la base de datos mostrando sus tres colecciones:
     - Usuarios (USERS)
     - Publicaciones (POSTS)
     - Comentarios (COMMENTS)
