@@ -61,13 +61,13 @@
 
 ## Bloques de tareas y código visual
 [⬆️](#índice)
-![](./assets/Trello_1.jpg)
+![](./assets/TSN_Trello_1.jpg)
 
 >*Vista general del tablero creado para el proyecto THESOCIALAPI.*
 
 ## Vista general de las tareas
 [⬆️](#índice)
-![](./assets/Trello_2.jpg)
+![](./assets/TSN_Trello_2.jpg)
 
 >*Vista general del tablero que contiene todas las tarjetas del proyecto THESOCIALAPI.*
 
