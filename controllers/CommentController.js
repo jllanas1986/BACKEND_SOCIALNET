@@ -16,7 +16,7 @@ const CommentController = {
             res.status(201).send({ message: 'Ha publicado el siguiente comentario:', comment })
         } catch (error) {
             console.error(error)
-            res.status(500).send({ message: 'Ha habido un problema al crear el comentario' })
+            res.status(500).send({ message: '(500) Ha habido un problema al crear el comentario' })
         }
     },
 

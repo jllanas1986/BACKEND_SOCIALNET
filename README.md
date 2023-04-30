@@ -1,161 +1,355 @@
-![](./assets/Banner.jpg)
+![](./assets/TSN_Banner.jpg)
 
 
-# INDEX
+# ÍNDICE
+- [THESOCIALAPI](#thesocialapi-)
+    - [Descripción del proyecto](#descripción-del-proyecto)
 
 - [TRELLO](#trello-)
-    - [Bloques de tareas y código visual](#vista-tablero)
-    - [Vista general de tareas](#vista-lista)
+    - [Enlace al tablero de trabajo ONLINE del proyecto](#enlace-al-tablero-de-trabajo-online-del-proyecto)
+    - [Bloques de tareas y código visual](#bloques-de-tareas-y-código-visual)
+    - [Vista general de las tareas](#vista-general-de-las-tareas)
 
- - [SWAGGER](#mongodb-investigación)
-    - [Check carpetas y dependencias](#qué-es-mongodb)
-    - [¿Cuales son las características especiales de MONGODB?](#cuales-son-las-características-especiales-de-mongodb)
-    - [¿Cómo se estructuran los datos en MongoDB?](#cómo-se-estructuran-los-datos-en-mongodb-)
-    - [¿Ventajas de MONGODB respecto otras bases de datos relacionales?](#ventajas-de-mongodb-respecto-otras-bases-de-datos-relacionales)
-    - [¿Desventajas de MongoDB? ¿Cuando no es recomendable utilizarlo?](#desventajas-de-mongodb-cuando-no-es-recomendable-utilizarlo)
-    - [Instalación y configuración de MONGODB y requisitos mínimos de hardware y software.](#instalación-y-configuración-de-mongodb-y-requisitos-mínimos-de-hardware-y-software)
+- [POSTMAN](#postman)
+    - [Enlace a la documentación y testing de la API online](#enlace-a-la-documentación-y-testing-de-la-api-online)
+    - [Estructura de endpoints creados y testeados](#estructura-de-endpoints-creados-y-testeados)
 
- - [Authors](#authors-)
+- [SWAGGER](#swagger)
+    - [Estructura de carpetas y check de instalación de la dependencia](#estructura-de-carpetas-y-check-de-dependencia)
+ 
+- [MONGODB Atlas](#mongodb-atlas)
+    - [Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI](#vista-del-clúster-que-contiene-la-base-de-datos-que-nutre-thesocialapi)
+ 
+- [ENDPOINTS de la API](#endpoints-de-la-api)
+    - [ENDPOINTS de la Colección: Usuarios](#endpoints-de-la-colección-usuarios)
+    - [ENDPOINTS de la Colección: Publicaciones](#endpoints-de-la-colección-publicaciones)
+    - [ENDPOINTS de la Colección: Comentarios](#endpoints-de-la-colección-comentarios)
+
+- [Herramientas empleadas en el proyecto (TOOLSET) ](#herramientas-empleadas-en-el-proyecto-toolset-%EF%B8%8F)
+
+- [Autores](#autores-%EF%B8%8F)
 
 
-# TRELLO 📅
-## Vista tablero
-[⬆️](#index)
-![](./assets/Trello_1.jpg)
 
->*Vista general del tablero creado para el proyecto de investigación.*
+# THESOCIALAPI 📅
+## Descripción del proyecto
+[⬆️](#índice)
 
-## Vista lista
-[⬆️](#index)
-![](./assets/Trello_2.jpg)
+>*THESOCIALAPI es una plataforma online de ayuda a la creación y testing de redes sociales  mediante el uso de una base de datos pre-poblada y una API que permite realizar las operaciones standar con Usuarios, Publicaciones, Comentarios y Likes. *
+>La plataforma lleva implementada características especiales como:
 
->*Vista de la lista que contiene los checkpoints del proyecto.*
+>- [X] Encriptación, validación de contraseñas y middleware de errores
+>- [X] Tockens de inicio de sesión para autorizar ciertas operaciones CRUD
+>- [X] Comprobación de la autoria de una publicación
+>- [X] Comprobación de la autoria de un comentario
+>- [X] Comprobación de privilegios como administrador
+>- [X] Posibilidad de dar o quitar un LIKE a las publicaciones
+>- [X] Posibilidad de paginar los resultados
+
+>A nivel de plataformas utilizadas para el completo despliegue de THESOCIALAPI hemos empleado:
+
+| PLATAFORMA    | USO |
+| :-----------:   | :---------- |
+|MongoDB Atlas| Aquí está la base de datos pre-poblada con la que efectuaremos las pruebas de conexión de la API.  |
+|VERCEL          |Plataforma de despligue,donde se ejecuta el servidor que permite entregar información desde y hacia la base de datos. |
 
 ***
-# MONGODB Investigación
-## ¿Qué es MongoDB?
-[⬆️](#index)
->MongoDB es una base de datos de código abierto y orientada a documentos, perteneciente a la familia de bases de datos NoSQL (Not Only SQL). Fue desarrollada por MongoDB Inc. y lanzada por primera vez en 2009. MongoDB se utiliza para almacenar y gestionar grandes cantidades de datos de manera flexible y escalable.
+# TRELLO 📅
+## Enlace al tablero de trabajo ONLINE del proyecto
+[⬆️](#índice)
+>[Ir a TRELLO](https://trello.com/b/s3Fk6LeJ)
 
->A diferencia de las bases de datos relacionales tradicionales, que utilizan tablas y filas para organizar los datos, MongoDB utiliza un modelo de datos basado en documentos BSON (Binary JSON), que es una representación binaria de documentos JSON (JavaScript Object Notation). Esto permite almacenar datos de manera flexible, sin necesidad de tener un esquema fijo, lo que hace que MongoDB sea especialmente adecuado para aplicaciones modernas y dinámicas que requieren una evolución rápida del esquema de datos.
+## Bloques de tareas y código visual
+[⬆️](#índice)
+![](./assets/TSN_Trello_1.jpg)
 
->MongoDB es conocido por su capacidad de escalamiento horizontal, lo que significa que puede manejar grandes volúmenes de datos y altas cargas de trabajo distribuyendo los datos en múltiples nodos o servidores. También ofrece características avanzadas como indexación, replicación y tolerancia a fallos para garantizar la disponibilidad y confiabilidad de los datos.
+>*Vista general del tablero creado para el proyecto THESOCIALAPI.*
 
->MongoDB se utiliza en una amplia gama de aplicaciones, desde aplicaciones web y móviles, hasta análisis de datos, IoT (Internet de las cosas), juegos en línea, e-commerce y muchas otras. Es popular en la comunidad de desarrollo debido a su flexibilidad, rendimiento y escalabilidad. Además, cuenta con una gran cantidad de herramientas, bibliotecas y soporte de la comunidad que facilitan su adopción y uso en diferentes entornos.
+## Vista general de las tareas
+[⬆️](#índice)
+![](./assets/TSN_Trello_2.jpg)
 
-## ¿Cuales son las características especiales de MONGODB?
-[⬆️](#index)
->Modelo de datos basado en documentos: MongoDB utiliza un modelo de datos flexible y basado en documentos BSON (Binary JSON), lo que permite almacenar datos en forma de documentos JSON que pueden tener estructuras diferentes sin necesidad de tener un esquema fijo. Esto brinda agilidad y adaptabilidad a los cambios en los datos, lo cual es ideal para aplicaciones modernas y dinámicas.
+>*Vista general del tablero que contiene todas las tarjetas del proyecto THESOCIALAPI.*
 
->Escalamiento horizontal: MongoDB es altamente escalable, lo que significa que puede manejar grandes volúmenes de datos y altas cargas de trabajo distribuyendo los datos en múltiples nodos o servidores. Esto permite un crecimiento horizontal eficiente y una mejora en el rendimiento a medida que se agregan más servidores a la infraestructura.
+***
+# POSTMAN
+## Enlace a la documentación y testing de la API online
+[⬆️](#índice)
+>[Ir a POSTMAN](https://documenter.getpostman.com/view/26580726/2s93eSZvCJ)
 
->Alta disponibilidad y tolerancia a fallos: MongoDB ofrece características de replicación y tolerancia a fallos para garantizar la disponibilidad y confiabilidad de los datos. Permite configurar réplicas de datos en varios nodos para tener copias redundantes de los datos, lo que permite que la base de datos siga funcionando incluso si se produce una falla en un nodo.
 
->Indexación: MongoDB admite una variedad de índices, incluyendo índices simples, compuestos, geoespaciales y de texto completo, lo que permite una búsqueda eficiente y rápida de datos.
+## Estructura de endpoints creados y testeados
+[⬆️](#índice)
+![](./assets/TSN_Postman_1.jpg)
 
->Consultas avanzadas: MongoDB tiene un poderoso sistema de consultas que admite consultas complejas y avanzadas, incluyendo consultas ad hoc, consultas por rango, consultas geoespaciales y más. Además, MongoDB tiene una sintaxis de consultas similar a SQL, lo que facilita la transición para aquellos familiarizados con bases de datos relacionales.
- 
->Flexibilidad en el almacenamiento de datos: MongoDB permite almacenar datos de diferentes tipos, como números, cadenas, fechas, arreglos, documentos anidados, entre otros. También admite operaciones avanzadas como actualizaciones atómicas, transacciones y agregaciones.
-
->Herramientas y ecosistema: MongoDB cuenta con una gran cantidad de herramientas, bibliotecas y soporte de la comunidad que facilitan su adopción y uso en diferentes entornos. Además, ofrece integraciones con otros lenguajes de programación y herramientas populares, lo que lo hace versátil y adecuado para una amplia variedad de aplicaciones y casos de uso.
-
->En resumen, MongoDB ofrece un modelo de datos flexible, escalabilidad horizontal, alta disponibilidad, consultas avanzadas y un amplio ecosistema de herramientas, lo que la hace una opción popular para aplicaciones modernas que requieren almacenamiento y gestión de datos eficiente y escalable.
-
-## ¿Cómo se estructuran los datos en MongoDB?
-[⬆️](#index)
->En MongoDB, los datos se estructuran en forma de documentos BSON (Binary JSON), que son representaciones binarias de documentos JSON (JavaScript Object Notation). Los documentos BSON son almacenados en colecciones, que son análogas a las tablas en las bases de datos relacionales, pero con algunas diferencias clave. A continuación, se describen los elementos principales de la estructura de datos en MongoDB:
-
->Documentos: Los documentos son la unidad básica de almacenamiento en MongoDB. Son estructuras de datos similares a JSON, que consisten en pares de clave-valor, donde las claves son strings y los valores pueden ser de diferentes tipos de datos, como números, cadenas, fechas, arreglos, documentos anidados, entre otros. Los documentos pueden tener estructuras diferentes y no necesitan seguir un esquema fijo, lo que brinda flexibilidad en la forma de almacenar datos.
-
->Colecciones: Las colecciones son agrupaciones lógicas de documentos en MongoDB, similares a las tablas en bases de datos relacionales. Cada documento se almacena en una colección y se identifica de manera única dentro de la colección mediante un campo especial llamado "_id". Las colecciones en MongoDB no requieren un esquema fijo y pueden contener documentos con estructuras diferentes.
-
->Bases de datos: Las bases de datos en MongoDB son contenedores de colecciones, y pueden contener una o más colecciones relacionadas. Cada base de datos tiene un nombre único y puede tener múltiples colecciones con diferentes esquemas.
-
->Campos: Los campos son las claves en los pares de clave-valor de los documentos. Los campos son strings y representan los atributos o propiedades de los documentos. Cada documento puede tener uno o más campos, y los campos pueden contener diferentes tipos de datos.
-
->Índices: Los índices en MongoDB son estructuras que permiten una búsqueda rápida y eficiente de datos en las colecciones. Los índices pueden ser simples o compuestos, y se crean en uno o más campos de los documentos para acelerar las operaciones de búsqueda y consulta.
-
->Consultas: Las consultas en MongoDB se realizan utilizando un lenguaje de consulta similar a SQL, pero adaptado para documentos BSON. Las consultas pueden incluir condiciones de búsqueda en los campos de los documentos, operadores lógicos, operadores de comparación, consultas por rango, consultas geoespaciales, entre otros.
-
->Agregaciones: Las agregaciones en MongoDB son operaciones que permiten procesar y transformar datos en colecciones mediante una serie de pasos en un pipeline. Las agregaciones pueden incluir operaciones como filtrado, proyección, agrupación, ordenamiento, entre otros, y son utilizadas para realizar análisis y transformaciones avanzadas en los datos almacenados en MongoDB.
-
->En resumen, los datos en MongoDB se estructuran en documentos BSON almacenados en colecciones, dentro de bases de datos. Los documentos son estructuras de datos flexibles y los campos representan los atributos o propiedades de los documentos. Los índices, consultas y agregaciones son herramientas utilizadas para acceder y procesar los datos almacenados en MongoDB de manera eficiente.
-
-## ¿Ventajas de MONGODB respecto otras bases de datos relacionales?
-[⬆️](#index)
->MongoDB ofrece varias ventajas en comparación con las bases de datos relacionales, especialmente en escenarios donde se requiere flexibilidad en la estructura de los datos y alta escalabilidad. Algunas de las ventajas principales de MongoDB son las siguientes:
-
->Esquema flexible: A diferencia de las bases de datos relacionales, que tienen un esquema fijo y riguroso, MongoDB permite almacenar datos con estructuras flexibles en documentos BSON. Esto significa que los campos y la estructura de los documentos pueden variar de un documento a otro, lo que brinda mayor flexibilidad en la forma de modelar los datos y permite adaptarse a cambios en los requerimientos del negocio de manera más ágil.
-
->Escalabilidad horizontal: MongoDB está diseñado para escalar horizontalmente, lo que significa que puede manejar grandes volúmenes de datos y altas cargas de trabajo distribuyendo los datos en múltiples nodos o servidores. Esto permite un crecimiento más sencillo y eficiente de la base de datos a medida que aumentan los requerimientos de almacenamiento y rendimiento, lo que lo hace ideal para aplicaciones de alta demanda.
-
->Alto rendimiento: MongoDB ofrece un rendimiento de lectura y escritura rápido gracias a su arquitectura optimizada para el acceso a datos en memoria y la capacidad de distribuir los datos en varios nodos. Además, ofrece características avanzadas como la replicación automática y la fragmentación de datos, que permiten mejorar el rendimiento y la disponibilidad de los datos en situaciones de alta carga.
-
->Modelado de datos complejos: MongoDB es adecuado para almacenar y consultar datos complejos, como datos anidados, arreglos y documentos embebidos, lo que permite representar relaciones complejas entre los datos de manera eficiente. Esto lo hace especialmente útil para aplicaciones con requerimientos de modelado de datos no estructurados o semiestructurados.
-
->Integración con lenguajes de programación populares: MongoDB tiene una gran comunidad de desarrolladores y ofrece controladores o librerías para varios lenguajes de programación populares, como Java, Python, Node.js, C#, entre otros, lo que facilita su integración con diferentes tecnologías y frameworks de desarrollo.
-
->Escalabilidad geográfica: MongoDB ofrece características avanzadas de replicación y distribución de datos que permiten escalar geográficamente la base de datos para distribuir los datos en diferentes ubicaciones geográficas y mejorar la latencia y la disponibilidad de los datos a nivel global.
-
->Administración sencilla: MongoDB ofrece herramientas de administración y monitoreo que facilitan la gestión de la base de datos, como su interfaz de línea de comandos (CLI), su interfaz gráfica de usuario (GUI) llamada MongoDB Compass, y su plataforma de gestión y monitoreo en la nube llamada MongoDB Atlas.
-
->En resumen, MongoDB ofrece ventajas en términos de flexibilidad en el esquema de datos, escalabilidad horizontal, alto rendimiento, modelado de datos complejos, integración con lenguajes de programación populares, escalabilidad geográfica y administración sencilla en comparación con las bases de datos relacionales, lo que lo hace una opción atractiva para aplicaciones modernas con requerimientos de datos flexibles y escalables.
-
-## ¿Desventajas de MongoDB? ¿Cuando no es recomendable utilizarlo?
-[⬆️](#index)
-
->Aunque MongoDB ofrece muchas ventajas, también tiene algunas limitaciones y desventajas que es importante tener en cuenta al considerar su uso en un proyecto. Algunas de las desventajas de MongoDB son las siguientes:
-
->Falta de soporte completo para transacciones: Aunque MongoDB ofrece soporte para transacciones a nivel de documento, no tiene soporte completo para transacciones ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad) a nivel de colección o base de datos. Esto puede ser una limitación en escenarios donde se requiere un control estricto de la consistencia y la integridad de los datos en transacciones complejas.
-
->Requiere una cuidadosa planificación de la estructura de datos: Aunque la flexibilidad del esquema en MongoDB es una ventaja, también puede ser una desventaja si no se planifica cuidadosamente la estructura de datos. La falta de un esquema fijo puede hacer que la gestión y consulta de datos sea más compleja, especialmente en aplicaciones con cambios frecuentes en la estructura de datos.
-
->Mayor complejidad en la administración y configuración: MongoDB tiene una serie de configuraciones y opciones avanzadas que pueden requerir un mayor nivel de experiencia y conocimientos técnicos para su configuración y gestión adecuada. Esto puede ser una desventaja en comparación con bases de datos relacionales más tradicionales que pueden tener interfaces y herramientas de administración más simples.
-
->Consumo de recursos: MongoDB puede requerir un mayor consumo de recursos, como memoria RAM y espacio de almacenamiento en comparación con bases de datos relacionales, debido a su arquitectura optimizada para el rendimiento en memoria y la duplicación de datos en múltiples nodos. Esto puede afectar el costo de infraestructura requerida para implementar y mantener una base de datos MongoDB.
-
->Curva de aprendizaje: Aunque MongoDB tiene una gran comunidad de desarrolladores y ofrece una documentación completa, puede tener una curva de aprendizaje más pronunciada para aquellos que están acostumbrados a trabajar con bases de datos relacionales tradicionales. El aprendizaje de nuevos conceptos y la adopción de un enfoque de diseño de datos basado en documentos puede requerir tiempo y esfuerzo adicional.
-
- 
-
->*En general, MongoDB puede no ser recomendable en los siguientes casos:*
-
->Aplicaciones que requieren transacciones complejas y estricto control de la consistencia de datos.
->Aplicaciones con un esquema de datos estable y bien definido, sin requerimientos de flexibilidad en la estructura de datos.
->Proyectos con limitaciones de recursos, donde el consumo de memoria RAM y espacio de almacenamiento es una preocupación significativa.
->Proyectos con equipos de desarrollo sin experiencia previa en bases de datos NoSQL y que necesitan una curva de aprendizaje rápida.
-
->Es importante evaluar cuidadosamente los requerimientos y características específicas de tu proyecto antes de elegir MongoDB o cualquier otra base de datos, y considerar si se ajusta adecuadamente a tus necesidades.
-
-## Instalación y configuración de MONGODB y requisitos mínimos de hardware y software.
-[⬆️](#index)
-
->La instalación y configuración de MongoDB puede variar según el sistema operativo en el que se desee instalar. A continuación se proporcionan los pasos generales para la instalación en un entorno típico de Windows, Linux o macOS:
-
->*Pasos generales para la instalación de MongoDB:*
-
->Descarga el paquete de instalación de MongoDB desde el sitio web oficial de MongoDB (https://www.mongodb.com/try/download/community).
->Sigue las instrucciones específicas de instalación para tu sistema operativo. Por ejemplo, en Windows, ejecuta el archivo de instalación y sigue el asistente de instalación. En Linux, puedes usar el administrador de paquetes de tu distribución para instalar MongoDB. En macOS, puedes usar el administrador de paquetes Homebrew o descargar el archivo de instalación y seguir las instrucciones.
->Configura las opciones de instalación, como la ruta de instalación, el puerto de escucha, etc., según tus necesidades. MongoDB tiene una amplia variedad de opciones de configuración que puedes personalizar según tus requerimientos específicos.
-
->*Requisitos mínimos de hardware y software para MongoDB:*
-
->Sistema operativo: MongoDB es compatible con una amplia gama de sistemas operativos, incluyendo Windows, Linux, macOS, y otros sistemas Unix. Verifica la documentación oficial de MongoDB para obtener la lista completa de sistemas operativos compatibles.
->Memoria RAM: MongoDB utiliza la memoria RAM para almacenar datos en caché y para operaciones de indexación y agregación. El requisito mínimo de memoria RAM depende del tamaño de tus datos y del rendimiento deseado de la base de datos. Sin embargo, se recomienda tener al menos 8 GB de RAM disponible para una operación óptima.
->Espacio de almacenamiento: El espacio de almacenamiento necesario dependerá del volumen de datos que esperas manejar en tu aplicación. Asegúrate de tener suficiente espacio de almacenamiento disponible para tus datos, así como espacio adicional para operaciones de copia de seguridad, replicación y otros fines.
->Procesador: MongoDB es compatible con una amplia variedad de procesadores, pero se recomienda un procesador de al menos 2 núcleos y 2 GHz de velocidad para un rendimiento adecuado.
->Conectividad de red: MongoDB utiliza el protocolo TCP/IP para la comunicación entre los distintos nodos de un clúster y para la comunicación con los clientes. Asegúrate de tener una conectividad de red estable y suficiente ancho de banda para tus necesidades.
-
->Es importante tener en cuenta que estos son solo los requisitos mínimos y el rendimiento y la escalabilidad de MongoDB pueden mejorar significativamente con hardware más potente y una configuración adecuada. Se recomienda consultar la documentación oficial de MongoDB y seguir las mejores prácticas de instalación y configuración para obtener un rendimiento óptimo en tu entorno específico.
+***
+# SWAGGER
+## Estructura de carpetas y check de dependencia
+[⬆️](#índice)
+![](./assets/TSN_Swagger_1.jpg)
+>Vista de la estructura de carpetas necesaria al instalar la dependencia que vincula el código con la plataforma de SWAGGER.
 
 > __Note__
-Powered by BLADGPT
+No es posible proporcionar ningún vínculo de testing de SWAGGER porque el deployment sobre VERCEL no está terminado.
+> __Warning__
+Se requiere modificar la estructura del index.js (project root) de manera muy específica.
+***
+# MONGODB Atlas
+## Vista del CLÚSTER que contiene la base de datos que nutre THESOCIALAPI
+[⬆️](#índice)
+![](./assets/TSN_Atlas_1.jpg)
+>Detalle del contenido del CLÚSTER que aloja la base de datos mostrando sus tres colecciones:
+    - Usuarios (USERS)
+    - Publicaciones (POSTS)
+    - Comentarios (COMMENTS)
 
-## Authors ✒️
-[⬆️](#index)
+***
+# ENDPOINTS de la API
+## ENDPOINTS de la Colección: Usuarios
+[⬆️](#índice)
 
-**Volodymyr Kolomiets** - *Especialista en CHATGTP* | *Especialista en TRELLO* | - [VolodymyrKolomiets](https://github.com/VolodymyrKolomiets)
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Crear usuario | POST  | localhost:8080/users/register|
 
-**Joan Baldó** - *Readme builder* | *Coding* | - [joanbaldo](https://github.com/joanbaldo)
+>Body-> raw (json)
+```js
+{
+    "name":"Sofia",
+    "email": "sofia@sofia.com",
+    "password": "123456",
+    "age":"25"
+}
+```
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Login usuario | POST  | localhost:8080/users/login|
+
+>Body-> raw (json)
+```js
+{
+    "email": "sofia@sofia.com",
+    "password": "123456"
+}
+```
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Logout usuario | DELETE | localhost:8080/users/logout|
+
+>HEADERS -> Authorisation
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA
+
+>Body-> raw (json)
+```js
+{
+    "email": "sofia@sofia.com",
+    "password": "123456"
+}
+```
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Eliminar usuario | DELETE | localhost:8080/users/deleteUserById/|
+
+> __Warning__
+Se requiere estar logueado como ADMIN para realizar esta operación.
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> User_ID
+'644652ed8c643dc5abe8eb46'
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Ver usuario por su ID | GET | localhost:8080/users/getById/|
+
+>Params -> User_ID
+'644652ed8c643dc5abe8eb46'
+
+## ENDPOINTS de la Colección: Publicaciones
+[⬆️](#índice)
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Crear publicación | POST | localhost:8080/posts/create|
+
+>HEADERS -> Authorisation
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA
+
+>Body-> raw (json)
+```js
+{
+    "title": "Sofia, the alumni killer",
+    "body": "Y si...olvidó mi cumple",
+    "userId" :"644652ed8c643dc5abe8eb46"
+}
+```
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Actualizar publicación | PUT | localhost:8080/posts/update/|
+
+>HEADERS -> Authorisation
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA
+
+>Body-> raw (json)
+```js
+{
+    "title": "Post 2 UPDATED",
+    "body": "Así vemos QUE SÍ varia este contenido"
+}
+```
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Borrar publicación | DELETE | localhost:8080/posts/delete/|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> Publicación_ID
+'644672e7725ae01cac4808f0'
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Mostrar publicación por ID | GET | localhost:8080/posts/postsById/|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> Publicación_ID
+'644672e7725ae01cac4808f0'
+
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Mostrar publicación por título | GET | localhost:8080/posts/postsByTitle|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> Título
+'Palabras que contengan título'
+
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Todas los usuarios+publ+coment | GET | localhost:8080/posts/getAllPosts|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Ver publicaciones paginadas | GET | localhost:8080/posts/getPostsPaginated?page=1&limit=10|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> 
+-page : 1
+-limit: 10
+
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Dar LIKE a publicación | PUT | localhost:8080/posts/likes/|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> Publicación_ID
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Quitar LIKE a publicación | DELETE | localhost:8080/posts/dislike/|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> Publicación_ID
+
+
+## ENDPOINTS de la Colección: Comentarios
+[⬆️](#índice)
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Crear comentario | POST | localhost:8080/comments/create|
+
+>HEADERS -> Authorisation
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA
+
+>Body-> raw (json)
+```js
+{
+    "commentTitle" : "Comentario para borrar",
+    "commentBody": "Comentario para borrar",
+    "userId": "644652ed8c643dc5abe8eb46",
+    "postId" : "644672b7725ae01cac4808ed"
+}
+```
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Borrar comentario | DELETE | localhost:8080/comments/delete/|
+
+
+>HEADERS -> Authorisation
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA'
+
+>Params -> Comentario_ID
+
+| ACCÍON  | OPERACIÓN CRUD | RUTA
+| :-----------:   | :---------- | :----------- |
+|Crear comentario por ID public.| POST | localhost:8080/comments/commentByPostId/|
+
+>HEADERS -> Authorisation
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ2NTJlZDhjNjQzZGM1YWJlOGViNDYiLCJpYXQiOjE2ODIzMzA5MzR9.5bva2ATkY3EnTk6MupZQdz87Hb7YXxivv7tdQqs0EKA
+
+>Body-> raw (json)
+```js
+{
+    "commentTitle" : "Comentario KILLER ",
+    "commentBody": "Es mentira"
+}
+
+```
+
+***
+# Herramientas empleadas en el proyecto (TOOLSET) ⚙️
+[⬆️](#índice)
+
+>* [*TRELLO*](https://trello.com/) - Planificador de tareas (Versión: no disponible)
+>* [*POSTMAN*](https://www.postman.com/) - Software para probar y documentar endpoints (Versión: 10.13.5)
+>* [*SWAGGER*](https://swagger.io/) - Plataforma de documentación de API's (Versión: 4.6.2)
+>* [*VISUAL STUDIO CODE*](https://code.visualstudio.com/) - Editor de código (Versión: 1.75.1)
+>* [*NodeJS*](https://code.visualstudio.com/) - Entorno de ejecución para crear servidores en backend (Versión: 18.15.0)
+>* [*Nodemon*](https://www.npmjs.com/package/nodemon/) - Herramienta para desarrollo que levanta el servidor automáticamente tras cada cambio realizado en el código (Versión: 18.15.0)
+>* [*MONGODB*](https://www.mongodb.com//) - Gestor de base de datos (Versión: 6.0)
+>* [*MONGOOSE*](https://mongoosejs.com/) - Herramienta de modelado de objetos para Node Js (Versión: 7.0.4)
+>* [*ATLAS (MONGODB)*](https://cloud.mongodb.com/) - Alojamiento de MONGODB para la/s base/s de datos empleando clústers (Versión: 6.0)
+>* [*BCRYPT*](https://code.visualstudio.com/) - Dependencia para la encriptación y comprobación de contraseñas (Versión: 1.4.3)
+>* [*JASON WEB TOKEN*](https://code.visualstudio.com/) - Dependencia para generar tokens de acceso (Versión: 9.0.0)
+>* [*DOTENV*](https://code.visualstudio.com/) - Dependencia para establecer las variables globales y poder desplegar (Versión: 16.0.3)
+>* [*VERCEL*](https://code.visualstudio.com/) - Plataforma para el despliegue del servidor(Versión: 1.75.1)
+>* [*Live Server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) -Extension de Visual Studio para check durante la fase de desarrollo y en entorno local.
+
+***
+# Autores ✒️
+[⬆️](#índice)
+
+**José LLanas** - | *Coding* | - [jllanas1986](https://github.com/jllanas1986)
+
+**Joan Baldó** - | *Coding* | - [joanbaldo](https://github.com/joanbaldo)
 
 ***
