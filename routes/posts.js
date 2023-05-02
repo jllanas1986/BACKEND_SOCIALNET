@@ -8,7 +8,7 @@ router.put('/update/:_id', authentication, isAuthor, PostController.update) // R
 router.delete('/delete/:_id', authentication, isAuthor, PostController.delete) // ROUTE: Endpoint UPDATE post
 router.get('/postsByTitle/:title', authentication, PostController.getPostByTitle) // ROUTE: Endpoint GET post by TITLE
 router.get('/postsById/:_id',authentication, PostController.getById) // ROUTE: Endpoint GET post by ID
-router.get('/getAllPosts', authentication, PostController.getAllPosts) // ROUTE: Endpoint GET ALL post + User Info + Comments attached
+router.get('/getAllPosts', PostController.getAllPosts) // ROUTE: Endpoint GET ALL post + User Info + Comments attached
 router.get('/getPostsPaginated', authentication, PostController.getAllPage) // ROUTE: Endpoint GET ALL post + User Info + Comments attached
 router.put('/likes/:_id', authentication, PostController.like); // To LIKE a POST based on its ID
 router.put('/dislike/:_id', authentication, PostController.dislike); // To UNLIKE a POST based on its ID
