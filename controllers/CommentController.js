@@ -10,7 +10,7 @@ const CommentController = {
             const comment = await Comment.create(req.body)
             const post = await Post.findByIdAndUpdate(
                 req.params._id,
-                { $push: { commentIds: req.comment._id } },
+                { $push: { commentIds: comment._id } },// OJO!!! no poner req.comment._id porque hay que cogerlo del comentario directamente
                 // { $push: { commentIds: req.comment.ObjectId } },
                 { new: true });
             res.status(201).send({ message: 'Ha publicado el siguiente comentario:', comment })
